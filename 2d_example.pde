@@ -11,7 +11,19 @@ int blg10 = 255 ;
 int blg11 = 255 ;
 int blg12 = 255 ;
 
-
+void grid(){
+ stroke(0);
+ strokeWeight(5);
+ //columm
+ line(110,0,110,430);
+ line(230,0,230,430);
+ line(360,0,360,430);
+ 
+ //row
+ line(0,115,500,115);
+ line(0,285,500,285);
+ line(0,430,500,430);
+}
 
 void setup() {
   size(500, 500);
@@ -33,9 +45,10 @@ void draw_lines(int x, int y, int n) {
 void draw() {
   background(255);
   println(mouseX,mouseY);
+  
 
 
-  int[][] grid = {{1, 2, 1, 3}, {3, 4, 1, 2}, {2, 1, 3, 4}};
+  int[][] grid = {{1, 2, 1, 3}, {3, 4, 1, 2}, {2, 1, 2, 4}};
 
   int rows = grid.length;
   int cols = grid[0].length;
@@ -72,10 +85,8 @@ void draw() {
   rect(120, 150, 100, 100);
   fill(255,255,255, blg7); 
   rect(250, 150, 100, 100);
-
   fill(255,255,255, blg8); 
   rect(370, 150, 200, 100);
-  
   fill(255,255,255, blg9); 
   rect(0, 300, 80, 130);
   fill(255,255,255, blg10); 
@@ -84,48 +95,51 @@ void draw() {
   rect(240, 300, 100, 130);
   fill(255,255,255, blg12); 
   rect(360, 300, 200, 130);
+  
+  grid();
 
 }
 
 
 
-void mouseClicked() {
-  if (mouseX < 80 && mouseY < 100 ){
+void mousePressed() {
+  if (mouseX < 110 && mouseY < 115 ){
     blg = 0 ;
   }
-  if (mouseX > 80 && mouseX < 190 && mouseY < 100 ){
+  if (mouseX > 110 && mouseX < 230 && mouseY < 115 ){
     blg2 = 0 ;
   }
-  if (mouseX > 190 && mouseX < 310 && mouseY < 100 ){
+  if (mouseX > 230 && mouseX < 360 && mouseY < 115 ){
     blg3 = 0 ;
   }
-  if (mouseX > 336 && mouseX < 500 && mouseY < 100 ){
+  if (mouseX > 360 && mouseX < 500 && mouseY < 115 ){
     blg4 = 0 ;
   }
-  if (mouseX > 0 && mouseY > 150 && mouseX < 170 && mouseY < 250 ){
+  if (mouseX > 0 && mouseY > 115 && mouseX < 110 && mouseY < 285 ){
     blg5 = 0 ;
   }
-  if (mouseX > 120 && mouseY > 150 && mouseX < 220 && mouseY < 250 ){
+  if (mouseX > 110 && mouseY > 115 && mouseX < 230 && mouseY < 285 ){
     blg6 = 0 ;
   }
-  if (mouseX > 250 && mouseY > 150 && mouseX < 350 && mouseY < 250 ){
+  if (mouseX > 230 && mouseY > 115 && mouseX < 360 && mouseY < 285 ){
     blg7 = 0 ;
   }
 
-    if (mouseX > 370 && mouseY > 150 && mouseX < 500 && mouseY < 250 ){
+    if (mouseX > 360 && mouseY > 115 && mouseX < 500 && mouseY < 285){
     blg8 = 0 ;
   }
-    if (mouseX > 0 && mouseY > 300 && mouseX < 80 && mouseY < 430 ){
+    if (mouseX > 0 && mouseY > 285 && mouseX < 110 && mouseY < 430 ){
     blg9 = 0 ;
   }
-    if (mouseX > 100 && mouseY > 300 && mouseX < 200 && mouseY < 430 ){
+    if (mouseX > 110 && mouseY > 285 && mouseX < 230 && mouseY < 430 ){
     blg10 = 0 ;
   }
-    if (mouseX > 240 && mouseY > 300 && mouseX < 340 && mouseY < 430 ){
+    if (mouseX > 230 && mouseY > 285 && mouseX < 360 && mouseY < 430 ){
     blg11 = 0 ;
   }
-    if (mouseX > 360 && mouseY > 300 && mouseX < 500 && mouseY < 430 ){
+    if (mouseX > 360 && mouseY > 285 && mouseX < 500 && mouseY < 430 ){
     blg12 = 0 ;
   }
+  
   
 }
